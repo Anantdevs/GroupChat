@@ -8,6 +8,14 @@ This Flutter app is a chat application that enables users to create chat rooms, 
 - Chat room
 - Real-time messaging
 - User profiles
+- Deleting messages
+- Editing previous messages
+- Searching messages
+- Updating profile
+- Generating messages using Chat GPT
+- Image sending with a preview
+- Zooming the sent image
+- Option to check for grammatical mistakes in messages
 
 ## Requirements
 
@@ -27,12 +35,18 @@ This Flutter app is a chat application that enables users to create chat rooms, 
 1. Launch the app on your device or emulator
 2. Sign up or log in to your account
 3. Create a new chat room or join an existing one
-4. Send messages and share files with other users in the chat room
-5. Update your user profile by tapping on your profile picture in the app bar
+4. Send and receive messages in real-time
+5. Delete or edit your messages by long-pressing on them
+6. Search for specific messages using the search feature
+7. Update your user profile by tapping on your profile picture in the app bar
+8. Generate messages using Chat GPT by typing in the message input field
+9. Send images by selecting the image from your device's gallery or camera with a preview before sending
+10. Zoom in or out on sent images by using pinch-to-zoom gesture
+11. Use the option to check for grammatical mistakes in messages before sending
 
 ## Contributions
 
 Contributions to the app are welcome and encouraged. If you find a bug or have a feature request, please create an issue on GitHub or submit a pull request.
 
-## Feadback
-If you have any feedback reach out to anantdevsingh9@gmail.com
+## Feedback
+If you have any feedback, please reach out to anantdevsingh9@gmail.com. We appreciate your input!

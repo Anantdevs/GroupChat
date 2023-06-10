@@ -40,6 +40,13 @@ dependencies:
   firebase_auth: ^4.4.2
   image_picker: ^0.8.7+4
   firebase_storage: ^11.1.1
+  google_bard: ^0.0.1
+  oauth2: ^2.0.2
+  provider: ^6.0.5
+  intl: ^0.18.1
+  video_player: ^2.6.1
+  video_thumbnail: ^0.5.3
+  simple_animations: ^5.0.1
 
 
 dev_dependencies:

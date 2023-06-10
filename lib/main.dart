@@ -1,3 +1,4 @@
+// import 'package:chat_app/screens/SpashScreen.dart';
 import 'package:chat_app/screens/auth_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -14,13 +15,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = ThemeData.dark();
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.pink,
-        backgroundColor: Colors.pink,
-        accentColor: Colors.deepPurple,
-        accentColorBrightness: Brightness.dark,
+      theme: theme.copyWith(
+        // accentColorBrightness: Brightness.dark,
+
         buttonTheme: ButtonTheme.of(context).copyWith(
           buttonColor: Colors.pink,
           textTheme: ButtonTextTheme.primary,
@@ -28,6 +28,9 @@ class MyApp extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
           ),
         ),
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.pink)
+            .copyWith(background: Colors.pink)
+            .copyWith(secondary: Colors.deepPurple),
       ),
       home: StreamBuilder(
           stream: FirebaseAuth.instance.authStateChanges(),

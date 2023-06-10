@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:chat_app/widgets/pickers/user_image_picker.dart';
+import 'package:chat_app/widgets/pickers/user_image_signing.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 

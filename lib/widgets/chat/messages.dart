@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Messages extends StatelessWidget {
+  final String searchQuery;
+
+  Messages({required this.searchQuery});
+
   @override
   Widget build(BuildContext context) {
     Future<User?> data() async {
@@ -31,17 +35,25 @@ class Messages extends StatelessWidget {
             }
 
             final chatDocs = chatSnapshot.data?.docs;
+            final filteredChatDocs = chatDocs
+                ?.where((doc) => doc['text']
+                    .toLowerCase()
+                    .contains(searchQuery.toLowerCase()))
+                .toList();
 
             return ListView.builder(
-              reverse: true,
-              itemCount: chatDocs != null ? chatDocs.length : 0,
-              itemBuilder: (ctx, index) => chatDocs != null
+              reverse: searchQuery == '' ? true : false,
+              itemCount: filteredChatDocs != null ? filteredChatDocs.length : 0,
+              itemBuilder: (ctx, index) => filteredChatDocs != null
                   ? MessageBubble(
-                      chatDocs[index]['text'],
-                      chatDocs[index]['username'],
-                      chatDocs[index]['userImage'],
-                      chatDocs[index]['userId'] == futureSnapshot.data?.uid,
-                      key: ValueKey(chatDocs[index].id),
+                      filteredChatDocs,
+                      index,
+                      filteredChatDocs[index]['text'],
+                      filteredChatDocs[index]['username'],
+                      filteredChatDocs[index]['userImage'],
+                      filteredChatDocs[index]['userId'] ==
+                          futureSnapshot.data?.uid,
+                      documentId: filteredChatDocs[index].id,
                     )
                   : null,
             );

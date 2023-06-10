@@ -37,7 +37,6 @@ class _AuthScreenState extends State<AuthScreen> {
           email: email,
           password: password,
         );
-        //
         final ref = FirebaseStorage.instance
             .ref()
             .child('user_image')
@@ -64,7 +63,6 @@ class _AuthScreenState extends State<AuthScreen> {
           ),
         );
       }
-
       setState(() {
         _isLoading = false;
       });
